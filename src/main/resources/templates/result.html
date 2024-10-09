@@ -3,9 +3,13 @@
 <body>
 
 <div class="container">
+    <script th:inline="javascript">
+        const path_fragment = localStorage.getItem("path_fragment");
+    </script>
     <div>
         The url for this page is <span th:text="${path_fragment}"></span>.
     </div>
+    The localStorage contains <span th:text="${path_fragment}"></span>.
     <script th:inline="javascript">
         localStorage.setItem("path_fragment", [[${path_fragment}]]);
     </script>
