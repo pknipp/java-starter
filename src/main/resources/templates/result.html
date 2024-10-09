@@ -6,8 +6,8 @@
     <div>
         The url for this page is <span th:text="${path_fragment}"></span>.
     </div>
-    <script>
-        localStorage.setItem("path_fragment", /*[[${path_fragment}]]*/);
+    <script th:inline="javascript">
+        localStorage.setItem("path_fragment", [[${path_fragment}]]);
     </script>
 </div>
 
