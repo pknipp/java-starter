@@ -26,15 +26,16 @@ public class GettingStartedApplication {
         return "index";
     }
 
-    @GetMapping("/{my_path_fragment}")
-    public String result() {
+    // @GetMapping("/{my_path_fragment}")
+    // public String result() {
+        // return "result";
+    // }
+
+    @GetMapping("/{path_fragment}")
+    public String hello(Model model) {
+        model.addAttribute("path_fragment", path_fragment);
         return "result";
     }
-
-    // @GetMapping("/{my_params}")
-    // public User getUser(@PathVariable Long my_params) {
-        // ...
-    // }
 
     @GetMapping("/database")
     String database(Map<String, Object> model) {
