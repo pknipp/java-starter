@@ -26,7 +26,7 @@ public class GettingStartedApplication {
         return "index";
     }
 
-    @GetMapping("/{my_params}")
+    @GetMapping("/{my_path_fragment}")
     public String result() {
         return "result";
     }
