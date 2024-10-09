@@ -26,10 +26,15 @@ public class GettingStartedApplication {
         return "index";
     }
 
-    @GetMapping("/result")
+    @GetMapping("/{my_params}")
     public String result() {
         return "result";
     }
+
+    // @GetMapping("/{my_params}")
+    // public User getUser(@PathVariable Long my_params) {
+        ...
+    // }
 
     @GetMapping("/database")
     String database(Map<String, Object> model) {
