@@ -33,7 +33,7 @@ public class GettingStartedApplication {
     // }
 
     @GetMapping("/{path_fragment}")
-    public String echo_url(Model model) {
+    public String echo_url(@PathVariable String path_fragment, Model model) {
         model.addAttribute("path_fragment", path_fragment);
         return "result";
     }
