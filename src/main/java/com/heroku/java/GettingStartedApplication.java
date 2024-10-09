@@ -33,7 +33,7 @@ public class GettingStartedApplication {
 
     // @GetMapping("/{my_params}")
     // public User getUser(@PathVariable Long my_params) {
-        ...
+        // ...
     // }
 
     @GetMapping("/database")
