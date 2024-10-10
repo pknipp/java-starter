@@ -3,18 +3,9 @@
 <body>
 
 <div class="container">
-    <script th:inline="javascript">
-        const path_fragment0 = localStorage.getItem("path_fragment");
-    </script>
     <div>
-        The url for this page is <span th:text="${path_fragment}"></span>.
+        The url for this page is <span th:text="${pathFragment}"></span>.
     </div>
-    <div id="local-storage"></div>
-    <script>
-      var myDiv = document.getElementById("local-storage");
-      myDiv.innerHTML = `According to localStorage, maps = ${maps}`;
-    </script>
-    <!-- The localStorage contains <span th:text=`${path_fragment0}`></span>. -->
 </div>
 
 </body>

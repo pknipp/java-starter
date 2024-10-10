@@ -28,14 +28,9 @@ public class GettingStartedApplication {
         return "index";
     }
 
-    // @GetMapping("/{my_path_fragment}")
-    // public String result() {
-        // return "result";
-    // }
-
-    @GetMapping("/{path_fragment}")
-    public String echo_url(@PathVariable String path_fragment, Model model) {
-        model.addAttribute("path_fragment", path_fragment);
+    @GetMapping("/{pathFragment}")
+    public String echoUrl(@PathVariable String pathFragment, Model model) {
+        model.addAttribute("path_fragment", pathFragment);
         return "result";
     }
 
