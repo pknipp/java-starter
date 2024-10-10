@@ -9,10 +9,12 @@
     <div>
         The url for this page is <span th:text="${path_fragment}"></span>.
     </div>
-    <!-- The localStorage contains <span th:text=`${path_fragment0}`></span>. -->
-    <script th:inline="javascript">
-        localStorage.setItem("path_fragment", [[${path_fragment}]]);
+    <div id="local-storage"></div>
+    <script>
+      var myDiv = document.getElementById("local-storage");
+      myDiv.innerHTML = maps;
     </script>
+    <!-- The localStorage contains <span th:text=`${path_fragment0}`></span>. -->
 </div>
 
 </body>
