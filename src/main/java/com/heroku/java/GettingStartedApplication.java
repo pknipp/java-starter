@@ -78,10 +78,10 @@ public class GettingStartedApplication {
                             t = a[ip][iq] / h;
                         } else {
                             float theta = (float) 0.5 * h / a[ip][iq];
-                            t = (float) 1 / (Math.abs(theta) + Math.sqrt(1 + Math.pow(theta, 2)));
+                            t =  1 / (float) (Math.abs(theta) + Math.sqrt(1 + Math.pow(theta, 2)));
                             if (theta < 0) t = -t;
                         }
-                        float c = (float) 1 / Math.sqrt(1 + Math.pow(t, 2));
+                        float c = 1 / (float) Math.sqrt(1 + Math.pow(t, 2));
                         float s = t * c;
                         float tau = s / (1 + c);
                         h = t * a[ip][iq];
