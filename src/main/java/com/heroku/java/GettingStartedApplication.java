@@ -43,12 +43,12 @@ public class GettingStartedApplication {
         int[][] v = new float[n][n];
         int[][] b = new float[n];
         int[][] d = new float[n];
-        int[][] z = new float[n]
+        int[][] z = new float[n];
         for (ip = 0; ip < n; ip++) {
             v[ip][ip] = 1;
             b[ip] = a[ip][ip];
             d[ip] = b[ip];
-            z[ip] = 0
+            z[ip] = 0;
         }
         nrot = 0;
         for (int i = 0; i < 50; i++) {
@@ -59,12 +59,12 @@ public class GettingStartedApplication {
                 }
             }
             if (sm == 0) return "Algo ended well.";
-            if (i < 4) then {
+            if (i < 4) {
                 tresh = 0.2 * sm / Math.pow(n, 2);
             } else {
                 tresh = 0;
             }
-            for (int ip = 0; ip < n - 1) {
+            for (int ip = 0; ip < n - 1; ip++) {
                 for (int iq = ip + 1; iq < n; iq++) {
                     g = 100 * Math.abs(a[ip][iq]);
 //                  After four sweeps, skip the rotation if the off-diagonal element is small.
@@ -100,7 +100,7 @@ public class GettingStartedApplication {
                             a[ip][j] = g - s * (h + g * tau);
                             a[j][iq] = h + s * (g - h * tau);
                         }
-                        for (int j = iq + 1; j < n) {
+                        for (int j = iq + 1; j < n; j++) {
                             g = a[ip][j];
                             h = a[iq][j];
                             a[ip][j] = g - s * (h + g * tau);
