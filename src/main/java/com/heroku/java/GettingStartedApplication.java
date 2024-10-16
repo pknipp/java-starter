@@ -59,7 +59,7 @@ public class GettingStartedApplication {
                 }
             }
             if (sm == 0) return "Algo ended well.";
-            float tresh;
+            double tresh;
             if (i < 4) {
                 tresh = 0.2 * sm / Math.pow(n, 2);
             } else {
@@ -81,10 +81,10 @@ public class GettingStartedApplication {
                             t = 1 / (Math.abs(theta) + Math.sqrt(1 + Math.pow(theta, 2)));
                             if (theta < 0) t = -t;
                         }
-                        c = 1 / Math.sqrt(1 + Math.pow(t, 2));
-                        s = t * c;
-                        tau = s / (1 + c);
-                        h=t*a[ip][iq];
+                        float c = 1 / Math.sqrt(1 + Math.pow(t, 2));
+                        float s = t * c;
+                        float tau = s / (1 + c);
+                        h = t * a[ip][iq];
                         z[ip] = z[ip] - h;
                         z[iq] = z[iq] + h;
                         d[ip] = d[ip] - h;
