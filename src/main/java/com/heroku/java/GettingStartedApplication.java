@@ -59,6 +59,7 @@ public class GettingStartedApplication {
                 }
             }
             if (sm == 0) return "Algo ended well.";
+            float tresh;
             if (i < 4) {
                 tresh = 0.2 * sm / Math.pow(n, 2);
             } else {
@@ -66,16 +67,17 @@ public class GettingStartedApplication {
             }
             for (int ip = 0; ip < n - 1; ip++) {
                 for (int iq = ip + 1; iq < n; iq++) {
-                    g = 100 * Math.abs(a[ip][iq]);
+                    float g = 100 * Math.abs(a[ip][iq]);
 //                  After four sweeps, skip the rotation if the off-diagonal element is small.
                     if (i > 3 && (Math.abs(d[ip]) + g == Math.abs(d[ip])) && (Math.abs(d[iq]) + g == Math.abs(d[iq]))) {
                         a[ip][iq] = 0;
                     } else if (Math.abs(a[ip][iq]) > tresh) {
-                        h = d[iq] - d[ip];
+                        float h = d[iq] - d[ip];
+                        float t;
                         if (Math.abs(h) + g == Math.abs(h)) {
                             t = a[ip][iq] / h;
                         } else {
-                            theta = 0.5 * h / a[ip][iq];
+                            float theta = 0.5 * h / a[ip][iq];
                             t = 1 / (Math.abs(theta) + Math.sqrt(1 + Math.pow(theta, 2)));
                             if (theta < 0) t = -t;
                         }
