@@ -34,11 +34,6 @@ public class GettingStartedApplication {
         return "result";
     }
 
-    public String foo(float [] a) {
-        int n = a.length;
-        return "bar";
-    }
-
     public String jacobi(float [][] a) {
         // Computes all eigenvalues and eigenvectors of a real symmetric matrix a, which is of size n by n, stored in a physical np by np array. On output, elements of a above the diagonal are
         // destroyed. d returns the eigenvalues of a in its first n elements. v is a matrix with the same
@@ -46,18 +41,18 @@ public class GettingStartedApplication {
         // eigenvectors of a. nrot returns the number of Jacobi rotations that were required.
         int n = a.length;
         float[][] v = new float[n][n];
-        float[][] b = new float[n];
-        float[][] d = new float[n];
-        float[][] z = new float[n];
-        for (ip = 0; ip < n; ip++) {
+        float[] b = new float[n];
+        float[] d = new float[n];
+        float[] z = new float[n];
+        for (int ip = 0; ip < n; ip++) {
             v[ip][ip] = 1;
             b[ip] = a[ip][ip];
             d[ip] = b[ip];
             z[ip] = 0;
         }
-        nrot = 0;
+        int nrot = 0;
         for (int i = 0; i < 50; i++) {
-            sm = 0;
+            float sm = 0;
             for (int ip = 0; ip < n - 1; ip++) {
                 for (int iq = ip + 1; iq < n; iq++) {
                     sm += Math.abs(a[ip][iq]);
