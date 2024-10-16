@@ -123,8 +123,8 @@ public class GettingStartedApplication {
                 d[ip] = b[ip];
                 z[ip] = 0;
             }
-            return "Algo went thru too many iterations.";
         }
+        return "Algo went thru too many iterations.";
     }
 
     @GetMapping("/database")
