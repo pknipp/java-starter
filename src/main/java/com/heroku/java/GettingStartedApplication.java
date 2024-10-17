@@ -30,7 +30,24 @@ public class GettingStartedApplication {
 
     @GetMapping("/{pathFragment}")
     public String echoUrl(@PathVariable String pathFragment, Model model) {
-        model.addAttribute("path_fragment", pathFragment);
+        path_fragment = path_fragment.substring(1);
+        path_fragment = path_fragment.substring(0, path_fragment.length() - 1);
+        String[] path_arr = path_fragment.split("],[");
+        int n = path_arr.length();
+        float[][] a = new float[n][n];
+        for (int i = 0; i < n; i++) {
+            String col = path_arr[i];
+            col = col.substring(1);
+            col = col.substring(0, col.length() - 1);
+            String[] col_arr = col.split(",");
+            for (int j = 0; j <= i; j++) {
+                float val = Float.parseFloat(col_arr[j]);
+                a[i][j] = val;
+                a[j][i] = val;
+            }
+        }
+        model.addAttribute("path_fragment", Arrays.toString(a));
+        // model.addAttribute("path_fragment", pathFragment);
         return "result";
     }
 
@@ -129,7 +146,7 @@ public class GettingStartedApplication {
 
     @GetMapping("/database")
     String database(Map<String, Object> model) {
-        try (Connection connection = dataSource.getConnection()) {
+        try (Connection connection = dataSource.getConnection()) {cd
             final var statement = connection.createStatement();
             statement.executeUpdate("CREATE TABLE IF NOT EXISTS ticks (tick timestamp)");
             statement.executeUpdate("INSERT INTO ticks VALUES (now())");
