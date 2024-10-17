@@ -53,14 +53,14 @@ public class GettingStartedApplication {
             System.out.println(a[0][1]);
             System.out.println(a[1][0]);
             System.out.println(a[1][1]);
-            jacobi(a);
+            float[] d = jacobi(a);
             model.addAttribute("path_fragment", Arrays.toString(d));
             // model.addAttribute("path_fragment", pathFragment);
         }
         return "result";
     }
 
-    public String jacobi(float [][] a) {
+    public float[] jacobi(float[][] a) {
         // Computes all eigenvalues and eigenvectors of a real symmetric matrix a, which is of size n by n, stored in a physical np by np array. On output, elements of a above the diagonal are
         // destroyed. d returns the eigenvalues of a in its first n elements. v is a matrix with the same
         // logical and physical dimensions as a, whose columns contain, on output, the normalized
@@ -87,7 +87,7 @@ public class GettingStartedApplication {
                     sm += Math.abs(a[ip][iq]);
                 }
             }
-            if (sm == 0) return "Algo ended well.";
+            if (sm == 0) return d;
             double tresh;
             if (i < 4) {
                 tresh = 0.2 * sm / Math.pow(n, 2);
@@ -153,7 +153,7 @@ public class GettingStartedApplication {
                 z[ip] = 0;
             }
         }
-        return "Algo went thru too many iterations.";
+        return d;
     }
 
     @GetMapping("/database")
