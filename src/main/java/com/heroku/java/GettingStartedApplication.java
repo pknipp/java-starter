@@ -49,6 +49,7 @@ public class GettingStartedApplication {
                     a[j][i] = val;
                 }
             }
+            jacobi(a);
             System.out.println(a[0][0]);
             System.out.println(a[0][1]);
             System.out.println(a[1][0]);
@@ -148,6 +149,8 @@ public class GettingStartedApplication {
                 d[ip] = b[ip];
                 z[ip] = 0;
             }
+            System.out.println(d[0]);
+            System.out.println(d[1]);
         }
         return "Algo went thru too many iterations.";
     }
