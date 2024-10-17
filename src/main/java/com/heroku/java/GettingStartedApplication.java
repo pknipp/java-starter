@@ -31,26 +31,15 @@ public class GettingStartedApplication {
 
     @GetMapping("/{pathFragment}")
     public String echoUrl(@PathVariable String pathFragment, Model model) {
-        System.out.println(pathFragment);
         pathFragment = pathFragment.substring(1);
-        System.out.println(pathFragment);
         pathFragment = pathFragment.substring(0, pathFragment.length() - 1);
-        System.out.println(pathFragment);
         String[] pathArr = pathFragment.split("\\),\\(");
-        System.out.println(Arrays.toString(pathArr));
         int n = pathArr.length;
-        System.out.println(n);
         float[][] a = new float[n][n];
         for (int i = 0; i < n; i++) {
             String col = pathArr[i];
-            System.out.println(col);
-            col = col.substring(1);
-            System.out.println(col);
-            col = col.substring(0, col.length() - 1);
-            System.out.println(col);
             String[] colArr = col.split(",");
             for (int j = 0; j <= i; j++) {
-                System.out.println(colArr[j]);
                 float val = Float.parseFloat(colArr[j]);
                 a[i][j] = val;
                 a[j][i] = val;
