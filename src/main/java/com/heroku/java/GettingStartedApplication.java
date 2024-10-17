@@ -49,6 +49,7 @@ public class GettingStartedApplication {
                     a[j][i] = val;
                 }
             }
+            System.out.println(Arrays.toString(a));
             model.addAttribute("path_fragment", Arrays.toString(a));
             // model.addAttribute("path_fragment", pathFragment);
         }
