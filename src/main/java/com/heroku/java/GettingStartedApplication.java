@@ -33,7 +33,7 @@ public class GettingStartedApplication {
     public String echoUrl(@PathVariable String pathFragment, Model model) {
         pathFragment = pathFragment.substring(1);
         pathFragment = pathFragment.substring(0, pathFragment.length() - 1);
-        String[] pathArr = pathFragment.split("),(");
+        String[] pathArr = pathFragment.split("\\),\\(");
         int n = pathArr.length;
         float[][] a = new float[n][n];
         for (int i = 0; i < n; i++) {
