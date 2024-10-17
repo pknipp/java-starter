@@ -30,18 +30,18 @@ public class GettingStartedApplication {
 
     @GetMapping("/{pathFragment}")
     public String echoUrl(@PathVariable String pathFragment, Model model) {
-        path_fragment = path_fragment.substring(1);
-        path_fragment = path_fragment.substring(0, path_fragment.length() - 1);
-        String[] path_arr = path_fragment.split("],[");
-        int n = path_arr.length();
+        pathFragment = pathFragment.substring(1);
+        pathFragment = pathFragment.substring(0, pathFragment.length() - 1);
+        String[] pathArr = pathFragment.split("],[");
+        int n = pathArr.length();
         float[][] a = new float[n][n];
         for (int i = 0; i < n; i++) {
-            String col = path_arr[i];
+            String col = pathArr[i];
             col = col.substring(1);
             col = col.substring(0, col.length() - 1);
-            String[] col_arr = col.split(",");
+            String[] colArr = col.split(",");
             for (int j = 0; j <= i; j++) {
-                float val = Float.parseFloat(col_arr[j]);
+                float val = Float.parseFloat(colArr[j]);
                 a[i][j] = val;
                 a[j][i] = val;
             }
