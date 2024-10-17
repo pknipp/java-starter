@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Map;
 
 @SpringBootApplication
@@ -31,14 +32,14 @@ public class GettingStartedApplication {
     @GetMapping("/{pathFragment}")
     public String echoUrl(@PathVariable String pathFragment, Model model) {
         pathFragment = pathFragment.substring(1);
-        pathFragment = pathFragment.substring(0, pathFragment.length() - 1);
+        pathFragment = pathFragment.substring(0, pathFragment.length - 1);
         String[] pathArr = pathFragment.split("],[");
-        int n = pathArr.length();
+        int n = pathArr.length;
         float[][] a = new float[n][n];
         for (int i = 0; i < n; i++) {
             String col = pathArr[i];
             col = col.substring(1);
-            col = col.substring(0, col.length() - 1);
+            col = col.substring(0, col.length - 1);
             String[] colArr = col.split(",");
             for (int j = 0; j <= i; j++) {
                 float val = Float.parseFloat(colArr[j]);
