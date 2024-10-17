@@ -49,11 +49,11 @@ public class GettingStartedApplication {
                     a[j][i] = val;
                 }
             }
-            jacobi(a);
             System.out.println(a[0][0]);
             System.out.println(a[0][1]);
             System.out.println(a[1][0]);
             System.out.println(a[1][1]);
+            jacobi(a);
             model.addAttribute("path_fragment", Arrays.toString(a));
             // model.addAttribute("path_fragment", pathFragment);
         }
@@ -78,6 +78,9 @@ public class GettingStartedApplication {
         }
         int nrot = 0;
         for (int i = 0; i < 50; i++) {
+            System.out.println(i);
+            System.out.println(d[0]);
+            System.out.println(d[1]);
             float sm = 0;
             for (int ip = 0; ip < n - 1; ip++) {
                 for (int iq = ip + 1; iq < n; iq++) {
@@ -149,8 +152,6 @@ public class GettingStartedApplication {
                 d[ip] = b[ip];
                 z[ip] = 0;
             }
-            System.out.println(d[0]);
-            System.out.println(d[1]);
         }
         return "Algo went thru too many iterations.";
     }
