@@ -31,6 +31,10 @@ public class GettingStartedApplication {
 
     @GetMapping("/{pathFragment}")
     public String echoUrl(@PathVariable String pathFragment, Model model) {
+        if (pathFragment == "favicon.ico") {
+            model.addAttribute("path_fragment, pathFragment");
+            return "result";
+        }
         pathFragment = pathFragment.substring(1);
         pathFragment = pathFragment.substring(0, pathFragment.length() - 1);
         String[] pathArr = pathFragment.split("\\),\\(");
