@@ -31,26 +31,27 @@ public class GettingStartedApplication {
 
     @GetMapping("/{pathFragment}")
     public String echoUrl(@PathVariable String pathFragment, Model model) {
+        System.out.println(pathFragment);
         if (pathFragment == "favicon.ico") {
             model.addAttribute("path_fragment, pathFragment");
-            return "result";
-        }
-        pathFragment = pathFragment.substring(1);
-        pathFragment = pathFragment.substring(0, pathFragment.length() - 1);
-        String[] pathArr = pathFragment.split("\\),\\(");
-        int n = pathArr.length;
-        float[][] a = new float[n][n];
-        for (int i = 0; i < n; i++) {
-            String col = pathArr[i];
-            String[] colArr = col.split(",");
-            for (int j = 0; j <= i; j++) {
-                float val = Float.parseFloat(colArr[j]);
-                a[i][j] = val;
-                a[j][i] = val;
+        } else {
+            pathFragment = pathFragment.substring(1);
+            pathFragment = pathFragment.substring(0, pathFragment.length() - 1);
+            String[] pathArr = pathFragment.split("\\),\\(");
+            int n = pathArr.length;
+            float[][] a = new float[n][n];
+            for (int i = 0; i < n; i++) {
+                String col = pathArr[i];
+                String[] colArr = col.split(",");
+                for (int j = 0; j <= i; j++) {
+                    float val = Float.parseFloat(colArr[j]);
+                    a[i][j] = val;
+                    a[j][i] = val;
+                }
             }
+            model.addAttribute("path_fragment", Arrays.toString(a));
+            // model.addAttribute("path_fragment", pathFragment);
         }
-        model.addAttribute("path_fragment", Arrays.toString(a));
-        // model.addAttribute("path_fragment", pathFragment);
         return "result";
     }
 
