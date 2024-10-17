@@ -4,28 +4,30 @@
 
 <div class="container">
     <p align="center">RESULTS</p>
-    <table border="1">
-        <thead>
-            <tr>
-                <th colspan="${n}">
-                    matrix
-                </th>
-            </tr>
-        </thead>
-        <thead>
-            <tr>
-                <th colspan="${n}">
-                    eigenvectors
-                </th>
-            </tr>
-            <tr th:each="eigenvalue : ${eigenvalues}">
-                <td th:text="${eigenvalue}"/>
-            </tr>
-        </thead>
-    </table>
-    <div>
-        The eigenvalues are <span th:text="${eigenvalues}"></span>.
-    </div>
+    <p align="center">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th colspan="${n}">
+                        matrix
+                    </th>
+                </tr>
+            </thead>
+            <thead>
+                <tr>
+                    <th colspan="${n}">
+                        eigenvectors
+                    </th>
+                </tr>
+                <tr th:each="eigenvalue : ${eigenvalues}">
+                    <td th:text="${eigenvalue}"/>
+                </tr>
+            </thead>
+        </table>
+    </p>
+    <!-- <div> -->
+        <!-- The eigenvalues are <span th:text="${eigenvalues}"></span>. -->
+    <!-- </div> -->
 </div>
 
 </body>
