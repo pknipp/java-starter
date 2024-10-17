@@ -54,7 +54,8 @@ public class GettingStartedApplication {
             System.out.println(a[1][0]);
             System.out.println(a[1][1]);
             float[] d = jacobi(a);
-            model.addAttribute("path_fragment", Arrays.toString(d));
+            model.addAttribute("eigenvalues", Arrays.toString(d));
+            model.addAttribute("n", n);
             // model.addAttribute("path_fragment", pathFragment);
         }
         return "result";
