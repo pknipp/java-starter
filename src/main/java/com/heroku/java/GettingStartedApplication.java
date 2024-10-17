@@ -33,7 +33,7 @@ public class GettingStartedApplication {
     public String echoUrl(@PathVariable String pathFragment, Model model) {
         System.out.println(pathFragment);
         if (pathFragment.equals("favicon.ico")) {
-            model.addAttribute("path_fragment, pathFragment");
+            model.addAttribute("path_fragment", "This was the favicon.ico route.");
         } else {
             pathFragment = pathFragment.substring(1);
             pathFragment = pathFragment.substring(0, pathFragment.length() - 1);
