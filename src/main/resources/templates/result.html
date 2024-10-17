@@ -18,9 +18,9 @@
                     <th colspan="${n}">
                         eigenvectors
                     </th>
-                </tr>
-                <tr th:each="eigenvalue : ${eigenvalues}">
-                    <td th:text="${eigenvalue}"/>
+                </tr>   
+                <tr>
+                    <td th:each="eigenvalue : ${eigenvalues}" th:text="${eigenvalue}"></td>
                 </tr>
             </thead>
         </table>
