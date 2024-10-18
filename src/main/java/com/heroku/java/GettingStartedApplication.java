@@ -31,7 +31,6 @@ public class GettingStartedApplication {
 
     @GetMapping("/{pathFragment}")
     public String echoUrl(@PathVariable String pathFragment, Model model) {
-        System.out.println(pathFragment);
         if (pathFragment.equals("favicon.ico")) {
             model.addAttribute("path_fragment", "This was the favicon.ico route.");
         } else {
@@ -76,7 +75,6 @@ public class GettingStartedApplication {
         }
         int nrot = 0;
         for (int i = 0; i < 50; i++) {
-            System.out.println(Arrays.toString(d));
             float sm = 0;
             for (int ip = 0; ip < n - 1; ip++) {
                 for (int iq = ip + 1; iq < n; iq++) {
@@ -115,31 +113,23 @@ public class GettingStartedApplication {
                         d[ip] = d[ip] - h;
                         d[iq] = d[iq] + h;
                         a[ip][iq] = 0;
-                        System.out.println(ip);
-                        System.out.println(iq);
                         for (int j = 0; j < ip; j++) {
                             g = a[j][ip];
                             h = a[j][iq];
                             a[j][ip] = g - s * (h + g * tau);
                             a[j][iq] = h + s * (g - h * tau);
-                            System.out.println(a[j][ip]);
-                            System.out.println(a[j][iq]);
                         }
                         for (int j = ip + 1; j < iq; j++) {
                             g = a[ip][j];
                             h = a[j][iq];
                             a[ip][j] = g - s * (h + g * tau);
                             a[j][iq] = h + s * (g - h * tau);
-                            System.out.println(a[ip][j]);
-                            System.out.println(a[j][iq]);
                         }
                         for (int j = iq + 1; j < n; j++) {
                             g = a[ip][j];
                             h = a[iq][j];
                             a[ip][j] = g - s * (h + g * tau);
                             a[iq][j] = h + s * (g - h * tau);
-                            System.out.println(a[ip][j]);
-                            System.out.println(a[iq][j]);
                         }
                         for (int j = 0; j < n; j++) {
                             g = v[j][ip];
