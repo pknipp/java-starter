@@ -76,16 +76,13 @@ public class GettingStartedApplication {
         }
         int nrot = 0;
         for (int i = 0; i < 50; i++) {
-            System.out.println(i);
-            System.out.println(d[0]);
-            System.out.println(d[1]);
             float sm = 0;
             for (int ip = 0; ip < n - 1; ip++) {
                 for (int iq = ip + 1; iq < n; iq++) {
                     sm += Math.abs(a[ip][iq]);
                 }
             }
-            if (sm == 0) return "success";
+            // if (sm == 0) return "success";
             double tresh;
             if (i < 4) {
                 tresh = 0.2 * sm / Math.pow(n, 2);
