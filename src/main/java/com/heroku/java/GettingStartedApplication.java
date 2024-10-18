@@ -83,8 +83,7 @@ public class GettingStartedApplication {
                     sm += Math.abs(a[ip][iq]);
                 }
             }
-            System.out.println(sm);
-            // if (sm == 0) return "success";
+            if (sm == 0) return "success";
             double tresh;
             // if (i < 4) {
                 // tresh = 0.2 * sm / Math.pow(n, 2);
