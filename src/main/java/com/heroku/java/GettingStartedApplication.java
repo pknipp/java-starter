@@ -86,11 +86,11 @@ public class GettingStartedApplication {
             System.out.println(sm);
             // if (sm == 0) return "success";
             double tresh;
-            if (i < 4) {
-                tresh = 0.2 * sm / Math.pow(n, 2);
-            } else {
+            // if (i < 4) {
+                // tresh = 0.2 * sm / Math.pow(n, 2);
+            // } else {
                 tresh = 0;
-            }
+            // }
             for (int ip = 0; ip < n - 1; ip++) {
                 for (int iq = ip + 1; iq < n; iq++) {
                     float g = 100 * Math.abs(a[ip][iq]);
@@ -100,13 +100,13 @@ public class GettingStartedApplication {
                     // } else if (Math.abs(a[ip][iq]) > tresh) {
                         float h = d[iq] - d[ip];
                         float t;
-                        if (Math.abs(h) + g == Math.abs(h)) {
-                            t = a[ip][iq] / h;
-                        } else {
+                        // if (Math.abs(h) + g == Math.abs(h)) {
+                            // t = a[ip][iq] / h;
+                        // } else {
                             float theta = (float) 0.5 * h / a[ip][iq];
                             t =  1 / (float) (Math.abs(theta) + Math.sqrt(1 + Math.pow(theta, 2)));
                             if (theta < 0) t = -t;
-                        }
+                        // }
                         float c = 1 / (float) Math.sqrt(1 + Math.pow(t, 2));
                         float s = t * c;
                         float tau = s / (1 + c);
