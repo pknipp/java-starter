@@ -66,6 +66,7 @@ public class GettingStartedApplication {
         // destroyed. d returns the eigenvalues of a in its first n elements. v is a matrix with the same
         // logical and physical dimensions as a, whose columns contain, on output, the normalized
         // eigenvectors of a. nrot returns the number of Jacobi rotations that were required.
+        
         int n = a.length;
         float[][] v = new float[n][n];
         float[] b = new float[n];
