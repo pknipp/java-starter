@@ -85,27 +85,27 @@ public class GettingStartedApplication {
             }
             if (sm == 0) return "success";
             double tresh;
-            // if (i < 4) {
-                // tresh = 0.2 * sm / Math.pow(n, 2);
-            // } else {
+            if (i < 4) {
+                tresh = 0.2 * sm / Math.pow(n, 2);
+            } else {
                 tresh = 0;
-            // }
+            }
             for (int ip = 0; ip < n - 1; ip++) {
                 for (int iq = ip + 1; iq < n; iq++) {
                     float g = 100 * Math.abs(a[ip][iq]);
 //                  After four sweeps, skip the rotation if the off-diagonal element is small.
-                    // if (i > 3 && (Math.abs(d[ip]) + g == Math.abs(d[ip])) && (Math.abs(d[iq]) + g == Math.abs(d[iq]))) {
-                        // a[ip][iq] = 0;
-                    // } else if (Math.abs(a[ip][iq]) > tresh) {
+                    if (i > 3 && (Math.abs(d[ip]) + g == Math.abs(d[ip])) && (Math.abs(d[iq]) + g == Math.abs(d[iq]))) {
+                        a[ip][iq] = 0;
+                    } else if (Math.abs(a[ip][iq]) > tresh) {
                         float h = d[iq] - d[ip];
                         float t;
-                        // if (Math.abs(h) + g == Math.abs(h)) {
-                            // t = a[ip][iq] / h;
-                        // } else {
+                        if (Math.abs(h) + g == Math.abs(h)) {
+                            t = a[ip][iq] / h;
+                        } else {
                             float theta = (float) 0.5 * h / a[ip][iq];
                             t =  1 / (float) (Math.abs(theta) + Math.sqrt(1 + Math.pow(theta, 2)));
                             if (theta < 0) t = -t;
-                        // }
+                        }
                         float c = 1 / (float) Math.sqrt(1 + Math.pow(t, 2));
                         float s = t * c;
                         float tau = s / (1 + c);
@@ -148,7 +148,7 @@ public class GettingStartedApplication {
                             v[j][iq] = h + s * (g - h * tau);
                         }
                         nrot++;
-                    // }
+                    }
                 }
             }
             for (int ip= 0; ip < n; ip++) {
