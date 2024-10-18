@@ -1,37 +1,38 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'result')}">
-<body>
-
-<div class="container">
-    <p align="center">RESULTS FOR EIGENVALUES</p>
-    <div align="center">
-        <table border="1">
-            <!-- <thead>
-                <tr>
-                    <th colspan="${n}">
-                        matrix
-                    </th>
-                </tr>
-            </thead> -->
-            <tbody>
-                <!-- <tr>
-                    <th colspan="${n}">
-                        eigenvectors
-                    </th>
-                </tr> -->
-                <tr>
-                    <td th:each="eigenvalue : ${eigenvalues}" th:text="${eigenvalue}"></td>
-                </tr>
-                <tr th:each="eigenvector : ${eigenvectors}">
-                    <td th:each="component : ${eigenvector}" th:text="${component}"/>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <!-- <div> -->
-        <!-- The eigenvalues are <span th:text="${eigenvalues}"></span>. -->
-    <!-- </div> -->
-</div>
-
-</body>
+    <body>
+        <div class="container">
+            <p align="center">RESULTS:</p>
+            <p align="center">Matrix:</p>
+            <div align="center">
+                <table border="1">
+                    <tbody>
+                        <tr th:each="row : ${matrix}">
+                            <td th:each="element : ${row}" th:text="${element}"/>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p align=""center">Eigenvalues:</p>
+            <div align="center">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td th:each="eigenvalue : ${eigenvalues}" th:text="${eigenvalue}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p align="center">Eigenvectors:</p>
+            <div align="center">
+                <table>
+                    <tbody>
+                        <tr th:each="eigenvector : ${eigenvectors}">
+                            <td th:each="component : ${eigenvector}" th:text="${component}"/>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
 </html>

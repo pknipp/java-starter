@@ -48,6 +48,7 @@ public class GettingStartedApplication {
                     a[j][i] = val;
                 }
             }
+            model.addAttribute("matrix", a);
             float[] d = new float[n];
             float[][] v = new float[n][n];
             jacobi(a, d, v);
