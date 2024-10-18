@@ -48,7 +48,13 @@ public class GettingStartedApplication {
                     a[j][i] = val;
                 }
             }
-            model.addAttribute("matrix", a);
+            float[][] aClone = new float[n][n];
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < n; j++) {
+                    aClone[i][j] = a[i][j];
+                }
+            }
+            model.addAttribute("matrix", aClone);
             float[] d = new float[n];
             float[][] v = new float[n][n];
             jacobi(a, d, v);
