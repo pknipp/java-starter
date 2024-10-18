@@ -49,12 +49,9 @@ public class GettingStartedApplication {
                     a[j][i] = val;
                 }
             }
-            System.out.println(a[0][0]);
-            System.out.println(a[0][1]);
-            System.out.println(a[1][0]);
-            System.out.println(a[1][1]);
             float[] d = new float[n];
-            jacobi(a, d);
+            float[][] v = new float[n][n];
+            jacobi(a, d, v);
             model.addAttribute("eigenvalues", d);
             model.addAttribute("n", n);
             // model.addAttribute("path_fragment", pathFragment);
@@ -62,13 +59,12 @@ public class GettingStartedApplication {
         return "result";
     }
 
-    public String jacobi(float[][] a, float[] d) {
+    public String jacobi(float[][] a, float[] d, float[][] v) {
         // Computes all eigenvalues and eigenvectors of a real symmetric matrix a, which is of size n by n, stored in a physical np by np array. On output, elements of a above the diagonal are
         // destroyed. d returns the eigenvalues of a in its first n elements. v is a matrix with the same
         // logical and physical dimensions as a, whose columns contain, on output, the normalized
         // eigenvectors of a. nrot returns the number of Jacobi rotations that were required.
         int n = a.length;
-        float[][] v = new float[n][n];
         float[] b = new float[n];
         float[] z = new float[n];
         for (int ip = 0; ip < n; ip++) {
