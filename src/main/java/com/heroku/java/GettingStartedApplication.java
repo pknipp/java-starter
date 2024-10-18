@@ -53,6 +53,7 @@ public class GettingStartedApplication {
             float[][] v = new float[n][n];
             jacobi(a, d, v);
             model.addAttribute("eigenvalues", d);
+            model.addAttribute("eigenvectors", v);
             model.addAttribute("n", n);
             // model.addAttribute("path_fragment", pathFragment);
         }
