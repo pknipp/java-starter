@@ -118,7 +118,7 @@ public class GettingStartedApplication {
                         a[ip][iq] = 0;
                         System.out.println(ip);
                         System.out.println(iq);
-                        for (int j = 0; j < ip - 1; j++) {
+                        for (int j = 0; j < ip; j++) {
                             g = a[j][ip];
                             h = a[j][iq];
                             a[j][ip] = g - s * (h + g * tau);
@@ -126,7 +126,7 @@ public class GettingStartedApplication {
                             System.out.println(a[j][ip]);
                             System.out.println(a[j][iq]);
                         }
-                        for (int j = ip + 1; j < iq - 1; j++) {
+                        for (int j = ip + 1; j < iq; j++) {
                             g = a[ip][j];
                             h = a[j][iq];
                             a[ip][j] = g - s * (h + g * tau);
