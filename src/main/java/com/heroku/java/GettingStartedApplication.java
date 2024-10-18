@@ -95,9 +95,9 @@ public class GettingStartedApplication {
                 for (int iq = ip + 1; iq < n; iq++) {
                     float g = 100 * Math.abs(a[ip][iq]);
 //                  After four sweeps, skip the rotation if the off-diagonal element is small.
-                    if (i > 3 && (Math.abs(d[ip]) + g == Math.abs(d[ip])) && (Math.abs(d[iq]) + g == Math.abs(d[iq]))) {
-                        a[ip][iq] = 0;
-                    } else if (Math.abs(a[ip][iq]) > tresh) {
+                    // if (i > 3 && (Math.abs(d[ip]) + g == Math.abs(d[ip])) && (Math.abs(d[iq]) + g == Math.abs(d[iq]))) {
+                        // a[ip][iq] = 0;
+                    // } else if (Math.abs(a[ip][iq]) > tresh) {
                         float h = d[iq] - d[ip];
                         float t;
                         if (Math.abs(h) + g == Math.abs(h)) {
@@ -141,7 +141,7 @@ public class GettingStartedApplication {
                             v[j][iq] = h + s * (g - h * tau);
                         }
                         nrot++;
-                    }
+                    // }
                 }
             }
             for (int ip= 0; ip < n; ip++) {
