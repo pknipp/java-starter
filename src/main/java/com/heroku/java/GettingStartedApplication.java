@@ -76,6 +76,7 @@ public class GettingStartedApplication {
         }
         int nrot = 0;
         for (int i = 0; i < 50; i++) {
+            System.out.println(Arrays.toString(d));
             float sm = 0;
             for (int ip = 0; ip < n - 1; ip++) {
                 for (int iq = ip + 1; iq < n; iq++) {
